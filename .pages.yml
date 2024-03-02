@@ -1,0 +1,39 @@
+content:
+  - name: posts
+    label: Blog posts
+    path: content/blog
+    type: collection
+    format: toml-frontmatter
+    fields:
+      - name: title
+        type: string
+      - name: description
+        type: text
+      - name: date
+        type: date
+        options:
+           format: YYYY-MM-DD
+      - name: extra
+        type: object
+        fields:
+          - name: draft
+            type: boolean
+            default: true
+            required: true
+          - name: show_toc
+            type: boolean
+            default: true
+            required: true
+          - name: meta_image
+            type: string
+          - name: author
+            type: object
+            list: true
+            fields:
+              - name: name
+                type: string
+                required: true
+              - name: twitter
+                type: string
+              - name: github
+                type: string
